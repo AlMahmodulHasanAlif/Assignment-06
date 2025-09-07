@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Earth</title>
+    <!-- daisy tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header >
+      <nav class="bg-[#15803D] flex lg:justify-around  items-center py-6 p-4 lg:px-0">
+        <h2 class="text-white text-2xl font-bold">Green Earth</h2>
+        <div class="text-white text-1xl font-bold font-medium">
+          <a class="mr-6" href="">About</a>
+          <a class="mr-6" href="">Gallery</a>
+          <a href="">Plant a Tree</a>
+        </div>
+        <button class="bg-[#FACC15] text-[#15803D] border rounded-full px-5 py-3">Plant a Tree</button>
+      </nav>
+      <section>
+        <div>
+            <img src="assets/hero-leaf1.png" alt="">
+            <img src="assets/hero-leaf2.png" alt="">
+        </div>
+      </section>
+  </body>
 </html>
