@@ -20,24 +20,170 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      .geist-regular {
+        font-family: "Geist", sans-serif;
+      }
     </style>
   </head>
   <body>
-    <header >
-      <nav class="bg-[#15803D] flex lg:justify-around  items-center py-6 p-4 lg:px-0">
+    <header>
+      <nav class="bg-[#15803D] flex lg:justify-around items-center p-4 lg:px-0">
         <h2 class="text-white text-2xl font-bold">Green Earth</h2>
         <div class="text-white text-1xl font-bold font-medium">
           <a class="mr-6" href="">About</a>
           <a class="mr-6" href="">Gallery</a>
           <a href="">Plant a Tree</a>
         </div>
-        <button class="bg-[#FACC15] text-[#15803D] border rounded-full px-5 py-3">Plant a Tree</button>
+        <button class="bg-[#FACC15] text-[#15803D] rounded-full px-5 py-3">
+          Plant a Tree
+        </button>
       </nav>
-      <section>
-        <div>
-            <img src="assets/hero-leaf1.png" alt="">
-            <img src="assets/hero-leaf2.png" alt="">
+    </header>
+    <section class="bg-[#CFF0DC]">
+      <div class="flex justify-between items-center py-10 lg:py-0">
+        <img class="h-20 lg:h-80" src="assets/hero-leaf1.png" alt="" />
+        <div class="text-center">
+          <h2
+            class="font-bold lg:text-3xl text-[1rem] lg:mb-2 whitespace-nowrap"
+          >
+            Plant a Tree, Grow a Future
+          </h2>
+          <p class="text-[0.6rem] lg:text-[0.8rem] lg:mb-6 mb-2">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+          <button
+            class="bg-[#FACC15] text-[#15803D] rounded-full px-5 py-3 lg:text-[1rem] text-[0.6rem]"
+          >
+            Get Invovled
+          </button>
         </div>
-      </section>
+        <img class="h-20 lg:h-80" src="assets/hero-leaf2.png" alt="" />
+      </div>
+    </section>
+    <section class="p-10 bg-[#DCFCE7]">
+      <div>
+        <h2 class="text-center font-semibold text-3xl p-10">
+          Choose Your Trees
+        </h2>
+        <div class="category-container grid grid-cols-[12rem_1fr_12rem] gap-6">
+          <ul class="col-span-1">
+            <h3 class="font-semibold text-[1.5rem]">Categories</h3>
+            <li class="text-white bg-[#15803D] rounded-md px-2.25 py-2">
+              All Trees
+            </li>
+            <li class="px-2.25 py-2">Fruit Trees</li>
+          </ul>
+          <div class="card-parent">
+            <div class="card-container grid grid-cols-3 gap-6">
+              <div class="card bg-white p-4">
+                <img
+                  class="rounded-lg mb-3"
+                  src="assets/hero-leaf1.png"
+                  alt=""
+                />
+                <h3 class="font-semibold text-sm mb-2">Mango Tree</h3>
+                <p class="text-[0.75rem] mb-2">
+                  A fast-growing tropical tree that produces delicious, juicy
+                  mangoes during summer. Its dense green
+                </p>
+                <div class="flex justify-between mb-2">
+                  <h4
+                    class="bg-[#DCFCE7] rounded-full text-[#15803D] geist-regular font-medium py-1 px-3"
+                  >
+                    Fruit Tree
+                  </h4>
+                  <p class="font-semibold">500</p>
+                </div>
+                <button class="bg-[#15803D] text-white py-3 rounded-full">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card bg-white p-4">
+                <img
+                  class="rounded-lg mb-3"
+                  src="assets/hero-leaf1.png"
+                  alt=""
+                />
+                <h3 class="font-semibold text-sm mb-2">Mango Tree</h3>
+                <p class="text-[0.75rem] mb-2">
+                  A fast-growing tropical tree that produces delicious, juicy
+                  mangoes during summer. Its dense green
+                </p>
+                <div class="flex justify-between mb-2">
+                  <h4
+                    class="bg-[#DCFCE7] rounded-full text-[#15803D] geist-regular font-medium py-1 px-3"
+                  >
+                    Fruit Tree
+                  </h4>
+                  <p class="font-semibold">500</p>
+                </div>
+                <button class="bg-[#15803D] text-white py-3 rounded-full">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="card bg-white p-4">
+                <img
+                  class="rounded-lg mb-3"
+                  src="assets/hero-leaf1.png"
+                  alt=""
+                />
+                <h3 class="font-semibold text-sm mb-2">Mango Tree</h3>
+                <p class="text-[0.75rem] mb-2">
+                  A fast-growing tropical tree that produces delicious, juicy
+                  mangoes during summer. Its dense green
+                </p>
+                <div class="flex justify-between mb-2">
+                  <h4
+                    class="bg-[#DCFCE7] rounded-full text-[#15803D] geist-regular font-medium py-1 px-3"
+                  >
+                    Fruit Tree
+                  </h4>
+                  <p class="font-semibold">500</p>
+                </div>
+                <button class="bg-[#15803D] text-white py-3 rounded-full">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="your-cart bg-white p-4">
+            <h3 class="font-semibold text-xl">Your Cart</h3>
+            <div class="flex justify-between bg-emerald-50 px-3 py-2">
+              <div class="text-sm">
+                <p class="font-semibold">Mango Tree</p>
+                <p class="text-gray-400">500 * 1</p>
+              </div>
+              <p>*</p>
+            </div>
+            <div class="flex justify-between px-3 py-2 font-medium">
+              <p>Total:</p>
+              <p>1000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#DCFCE7]">
+      <h2 class="text-center font-semibold text-2xl pt-8">
+        About the Campaign
+      </h2>
+      <div class="flex items-center gap-7 py-10 px-70">
+        <img class="h-100" src="assets/about.png" alt="" />
+        <p class="text-[#404040]">
+          Green Earth is a global tree plantation initiative dedicated to
+          fighting climate change. Since our start, we’ve planted over 500,000
+          trees worldwide. By joining our campaign, you help restore forests,
+          create habitats for wildlife, and combat global warming.
+          <br />
+          <br />
+          • Restoration of natural habitats
+          <br />
+          • Improvement of air quality Support for
+          <br />
+          • local communities
+        </p>
+      </div>
+    </section>
   </body>
 </html>
