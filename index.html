@@ -43,7 +43,7 @@
     </header>
     <section class="bg-[#CFF0DC]">
       <div class="flex justify-between items-center py-10 lg:py-0">
-        <img class="h-20 lg:h-80" src="assets/hero-leaf1.png" alt="" />
+        <img class="h-10 lg:h-80" src="assets/hero-leaf1.png" alt="" />
         <div class="text-center">
           <h2
             class="font-bold lg:text-3xl text-[1rem] lg:mb-2 whitespace-nowrap"
@@ -60,7 +60,7 @@
             Get Invovled
           </button>
         </div>
-        <img class="h-20 lg:h-80" src="assets/hero-leaf2.png" alt="" />
+        <img class="h-10 object-cover lg:h-80" src="assets/hero-leaf2.png" alt="" />
       </div>
     </section>
     <section class="p-10 bg-green-50">
@@ -73,15 +73,18 @@
         >
           <ul class="" id="category-container">
             <h3 class="font-semibold text-[1.5rem]">Categories</h3>
-            <li
-              class="text-black hover:bg-[#15803D] hover:text-white rounded-md px-2.25 py-2"
+            <li onclick="allPlants();"
+              class="text-black bg-[#15803D] hover:bg-[#15803D] hover:text-white rounded-md px-2.25 py-2 hover:cursor-pointer"
             >
               All Trees
             </li>
           </ul>
           <div class="card-parent">
-            <div id="card-container" class="card-container grid lg:grid-cols-3 gap-6">
-              <div class="card bg-white p-4">
+            <div
+              id="card-container"
+              class="card-container grid lg:grid-cols-3 gap-6"
+            >
+              <!-- <div class="card bg-white p-4">
                 <img
                   class="rounded-lg mb-3"
                   src="assets/hero-leaf1.png"
@@ -149,7 +152,7 @@
                 <button class="bg-[#15803D] text-white py-3 rounded-full">
                   Add to Cart
                 </button>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="your-cart bg-white p-4">
