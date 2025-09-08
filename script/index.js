@@ -1,6 +1,9 @@
 const categoryContainer = document.getElementById("category-container");
 const cardContainer = document.getElementById("card-container");
-const shobTree = document.getElementById("shob-tree");
+const cartContainer = document.getElementById("cart-container");
+const priceText = document.getElementById("price-text");
+
+let cart = [];
 
 const loadCategory = () => {
   fetch(`https://openapi.programming-hero.com/api/categories`)
@@ -58,7 +61,7 @@ const showTrees = (plants) => {
   //   console.log(plants);
   plants.forEach((plant) => {
     cardContainer.innerHTML += `
-                             <div class="card bg-white p-4">
+            <div id="${plant.id}" class="card bg-white p-4">
                 <img
                   class="rounded-lg mb-3 w-full h-64 object-cover"
                   src="${plant.image}"
@@ -97,7 +100,7 @@ allPlants();
 const allPlantsShow = (shobGach) => {
   shobGach.forEach((gach) => {
     cardContainer.innerHTML += `
-                                 <div class="card bg-white p-4">
+            <div id="${gach.id}" class="card bg-white p-4">
                 <img
                   class="rounded-lg mb-3 w-full h-64 object-cover"
                   src="${gach.image}"
@@ -123,9 +126,45 @@ const allPlantsShow = (shobGach) => {
   });
 };
 
+cardContainer.addEventListener("click", (e) => {
+  handleCart(e);
+});
 
-cardContainer.addEventListener('click', (e) => {
-    if (e.target.innerText === "Add to Cart") {
-      console.log("clicked");
-    }
-})
+const handleCart = (e) => {
+  if (e.target.innerText === "Add to Cart") {
+    const title = e.target.parentNode.children[1].innerText;
+    const id = e.target.parentNode.id;
+    const price = e.target.parentNode.children[3].children[1].innerText;
+    cart.push({
+      title: title,
+      id: id,
+      price: price,
+    });
+    showCart(cart);
+  }
+};
+
+const showCart = (cart) => {
+  cartContainer.innerHTML = "";
+  let total = 0;
+  cart.forEach((carts) => {
+    cartContainer.innerHTML += `
+                <div class="flex justify-between bg-emerald-50 px-3 py-2 mb-2">
+                <div class="text-sm">
+                  <p class="font-semibold">${carts.title}</p>
+                  <p class="text-gray-400">${carts.price} <span class="text-center">x</span> 1</p>
+                </div>
+                <p class="text-red-700 delete-item hover:cursor-pointer">✖</p>
+              </div>
+        `;
+    const newPrice = parseInt(carts.price.replace("৳", ""));
+    total += newPrice;
+  });
+  priceText.innerText = "৳" + total;
+};
+
+cartContainer.addEventListener("click", (e) => {
+  if (e.target.innerText === "✖") {
+    console.log("clikc");
+  }
+});
