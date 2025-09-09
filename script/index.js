@@ -11,7 +11,6 @@ const loadCategory = () => {
   fetch(`https://openapi.programming-hero.com/api/categories`)
     .then((res) => res.json())
     .then((data) => {
-      //   console.log(data.categories);
       const categories = data.categories;
       showCategory(categories);
     })
@@ -24,7 +23,6 @@ loadCategory();
 
 const showCategory = (categories) => {
   categories.forEach((cat) => {
-    // console.log(cat.category_name);
     categoryContainer.innerHTML += `
                           <ul class="">
                              <li id="${cat.id}" class="text-black hover:bg-[#15803D] hover:text-white rounded-md px-2.25 py-2 cursor-pointer">
@@ -40,7 +38,6 @@ const showCategory = (categories) => {
       allLi.forEach((li) => {
         li.classList.remove("bg-[#15803D]", "text-white");
       });
-      //   console.log(e.target.id);
       e.target.classList.add("bg-[#15803D]", "text-white");
       loadTreesByCategory(e.target.id);
     }
@@ -52,7 +49,6 @@ const loadTreesByCategory = (categoryId) => {
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data.plants);
       showTrees(data.plants);
       document.getElementById("loader").classList.add("hidden");
     })
@@ -62,7 +58,6 @@ const loadTreesByCategory = (categoryId) => {
 };
 
 const showTrees = (plants) => {
-  //   console.log(plants);
   cardContainer.innerHTML = "";
   plants.forEach((plant) => {
     cardContainer.innerHTML += `
@@ -97,7 +92,6 @@ const allPlants = () => {
     .then((res) => res.json())
     .then((data) => {
       const shobGach = data.plants;
-      // console.log(shobGach);
       allPlantsShow(shobGach);
       document.getElementById("loader").classList.add("hidden");
     });
@@ -155,8 +149,6 @@ const handleCart = (e) => {
 
 const handleModal = (e) => {
   const id = e.target.parentNode.id;
-  // showModal.showModal();
-
   fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -169,7 +161,6 @@ const handleModal = (e) => {
 
 const showModalDetail = (plants) => {
   showModal.showModal();
-  console.log(plants);
   modalContainer.innerHTML = `
      <h2 class="text-2xl font-semibold"> ${plants.name}</h2>
      <img class="mt-4 mb-4 w-full h-100 object-cover rounded-lg" src="${plants.image}" alt="" />
