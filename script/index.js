@@ -72,7 +72,7 @@ const showTrees = (plants) => {
                   src="${plant.image}"
                   alt=""
                 />
-                <h3 class="font-semibold text-sm mb-2">${plant.name}</h3>
+                <h3 class="font-semibold text-sm mb-2 cursor-default">${plant.name}</h3>
                 <p class="text-[0.75rem] mb-2">
                   ${plant.description}
                 </p>
@@ -172,7 +172,7 @@ const showModalDetail = (plants) => {
   console.log(plants);
   modalContainer.innerHTML = `
      <h2 class="text-2xl font-semibold"> ${plants.name}</h2>
-     <img class="mt-4 mb-4 w-full h-64 object-cover rounded-lg" src="${plants.image}" alt="" />
+     <img class="mt-4 mb-4 w-full h-100 object-cover rounded-lg" src="${plants.image}" alt="" />
      <p><span class="font-semibold mb-2">Category:</span> ${plants.category}</p>
       <p><span class="font-semibold mb-2">Price:</span> ৳ ${plants.price}</p>
         <p><span class="font-semibold mb-2">Description:</span> ${plants.description}</p>

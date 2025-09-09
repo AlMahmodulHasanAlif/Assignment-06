@@ -27,7 +27,9 @@
   </head>
   <body>
     <header>
-      <nav class="bg-[#15803D] flex lg:justify-around items-center p-4 lg:px-0">
+      <nav
+        class="bg-[#15803D] flex flex-col lg:flex-row gap-3 lg:justify-around items-center p-4 lg:px-0"
+      >
         <h2 class="text-white text-2xl font-bold">Green Earth</h2>
         <div class="text-white text-1xl font-bold font-medium">
           <a class="mr-6 hover:underline" href="">About</a>
@@ -42,29 +44,25 @@
       </nav>
     </header>
     <section class="bg-[#CFF0DC]">
-      <div class="flex justify-between items-center py-10 lg:py-0">
-        <img class="h-10 lg:h-80" src="assets/hero-leaf1.png" alt="" />
+      <div
+        class="flex lg:justify-between justify-center flex-row items-center py-10 lg:py-0"
+      >
+        <img class="h-30 lg:h-80" src="assets/hero-leaf1.png" alt="" />
         <div class="text-center">
-          <h2
-            class="font-bold lg:text-3xl text-[1rem] lg:mb-2 whitespace-nowrap"
-          >
+          <h2 class="font-bold text-2xl lg:text-3xl mb-2 whitespace-nowrap">
             Plant a Tree, Grow a Future
           </h2>
-          <p class="text-[0.6rem] lg:text-[0.8rem] lg:mb-6 mb-2">
+          <p class="lg:text-[0.8rem] lg:mb-6 mb-2">
             Join our mission to plant 1 million trees and make the Earth greener
             for future generations.
           </p>
           <button
-            class="bg-[#FACC15] hover:bg-[#e7ba07] text-[#15803D] rounded-full px-5 py-3 lg:text-[1rem] text-[0.6rem]"
+            class="bg-[#FACC15] hover:bg-[#e7ba07] text-[#15803D] rounded-full px-5 py-3 lg:text-[1rem] ]"
           >
             Get Invovled
           </button>
         </div>
-        <img
-          class="h-10 object-cover lg:h-80"
-          src="assets/hero-leaf2.png"
-          alt=""
-        />
+        <img class="h-30 lg:h-80" src="assets/hero-leaf2.png" alt="" />
       </div>
     </section>
     <section class="p-10 bg-green-50">
@@ -93,7 +91,7 @@
               class="card-container grid lg:grid-cols-3 gap-6"
             ></div>
           </div>
-          <div class="your-cart bg-white p-4">
+          <div class="your-cart bg-white p-4 rounded-lg">
             <h3 class="font-semibold text-xl mb-2">Your Cart</h3>
             <div id="cart-container"></div>
             <div class="flex justify-between px-3 py-2 font-medium">
@@ -192,8 +190,7 @@
       <p>© 2025 Green Earth. All Rights Reserved.</p>
     </footer>
     <dialog id="show" class="modal">
-      <div id="modal-container" class="modal-box">
-      </div>
+      <div id="modal-container" class="modal-box"></div>
     </dialog>
     <script src="script/index.js"></script>
   </body>
