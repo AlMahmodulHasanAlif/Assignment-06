@@ -46,11 +46,13 @@ const showCategory = (categories) => {
 };
 
 const loadTreesByCategory = (categoryId) => {
+  document.getElementById("loader").classList.remove("hidden");
   fetch(`https://openapi.programming-hero.com/api/category/${categoryId}`)
     .then((res) => res.json())
     .then((data) => {
       // console.log(data.plants);
       showTrees(data.plants);
+      document.getElementById("loader").classList.add("hidden");
     })
     .catch((err) => {
       console.log(err);
@@ -59,6 +61,7 @@ const loadTreesByCategory = (categoryId) => {
 
 const showTrees = (plants) => {
   //   console.log(plants);
+  cardContainer.innerHTML = "";
   plants.forEach((plant) => {
     cardContainer.innerHTML += `
             <div id="${plant.id}" class="card bg-white p-4">
@@ -94,6 +97,7 @@ const allPlants = () => {
       const shobGach = data.plants;
       // console.log(shobGach);
       allPlantsShow(shobGach);
+      document.getElementById("loader").classList.add("hidden");
     });
 };
 allPlants();
@@ -149,7 +153,7 @@ const showCart = (cart) => {
   let total = 0;
   cart.forEach((carts) => {
     cartContainer.innerHTML += `
-                <div class="flex justify-between bg-emerald-50 px-3 py-2 mb-2">
+                <div id="${carts.id}" class="flex justify-between bg-emerald-50 px-3 py-2 mb-2">
                 <div class="text-sm">
                   <p class="font-semibold">${carts.title}</p>
                   <p class="text-gray-400">${carts.price} <span class="text-center">x</span> 1</p>
@@ -165,6 +169,12 @@ const showCart = (cart) => {
 
 cartContainer.addEventListener("click", (e) => {
   if (e.target.innerText === "✖") {
-    console.log("clikc");
+    const itemRemove = e.target.parentNode;
+    const cartItems = Array.from(cartContainer.children);
+    const index = cartItems.indexOf(itemRemove);
+    if (index > -1) {
+      cart.splice(index, 1);
+      showCart(cart);
+    }
   }
 });
