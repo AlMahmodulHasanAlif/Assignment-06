@@ -135,6 +135,7 @@ const handleCart = (e) => {
     const title = e.target.parentNode.children[1].innerText;
     const id = e.target.parentNode.id;
     const price = e.target.parentNode.children[3].children[1].innerText;
+    alert(title + " has been added to the cart.");
     cart.push({
       title: title,
       id: id,
