@@ -2,6 +2,8 @@ const categoryContainer = document.getElementById("category-container");
 const cardContainer = document.getElementById("card-container");
 const cartContainer = document.getElementById("cart-container");
 const priceText = document.getElementById("price-text");
+const showModal = document.getElementById("show");
+const modalContainer = document.getElementById("modal-container");
 
 let cart = [];
 
@@ -110,7 +112,7 @@ const allPlantsShow = (shobGach) => {
                   src="${gach.image}"
                   alt=""
                 />
-                <h3 class="font-semibold text-sm mb-2">${gach.name}</h3>
+                <h3 class="font-semibold text-sm mb-2 cursor-default">${gach.name}</h3>
                 <p class="text-[0.75rem] mb-2">
                   ${gach.description}
                 </p>
@@ -146,6 +148,40 @@ const handleCart = (e) => {
     });
     showCart(cart);
   }
+  if (e.target.tagName === "H3") {
+    handleModal(e);
+  }
+};
+
+const handleModal = (e) => {
+  const id = e.target.parentNode.id;
+  // showModal.showModal();
+
+  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      showModalDetail(data.plants);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const showModalDetail = (plants) => {
+  showModal.showModal();
+  console.log(plants);
+  modalContainer.innerHTML = `
+     <h2 class="text-2xl font-semibold"> ${plants.name}</h2>
+     <img class="mt-4 mb-4 w-full h-64 object-cover rounded-lg" src="${plants.image}" alt="" />
+     <p><span class="font-semibold mb-2">Category:</span> ${plants.category}</p>
+      <p><span class="font-semibold mb-2">Price:</span> ৳ ${plants.price}</p>
+        <p><span class="font-semibold mb-2">Description:</span> ${plants.description}</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+        </div>
+  `;
 };
 
 const showCart = (cart) => {
